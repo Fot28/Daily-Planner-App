@@ -32,6 +32,19 @@ function updateTimeBlocks() {
 	});
 }
 
+var clicked = false;
+
+$("input.description").click(function () {
+	$(this).data("clicked", true);
+});
+
+if (clicked === true) {
+	alert("yes");
+} else {
+	clicked = false;
+	$("input.description").css("border", "0");
+}
+
 $(document).ready(function () {
 	// Update the time blocks when the page loads
 	updateTimeBlocks();
