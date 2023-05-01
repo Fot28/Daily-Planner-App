@@ -14,7 +14,7 @@ To use this Daily Planner App, open the website link, click on any time block yo
 
 [Website link](https://fot28.github.io/Daily-Planner-App/)
 
-![Screenshot](./images/screenshot.png)
+![Screenshot](./images/screenshot.gif)
 
 For more information, please visit [https://github.com/Fot28/Daily-Planner-App]
 
