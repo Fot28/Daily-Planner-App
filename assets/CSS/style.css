@@ -6,7 +6,7 @@ body {
 
 textarea {
 	background: transparent;
-	border: none;
+	border: 0px !important;
 	resize: none;
 	color: #000000;
 	border-left: 1px solid black;
@@ -23,7 +23,6 @@ textarea {
 
 .description {
 	white-space: pre-wrap;
-	cursor: text;
 }
 
 .time-block {
