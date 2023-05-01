@@ -31,3 +31,38 @@ function updateTimeBlocks() {
 		}
 	});
 }
+
+$(document).ready(function () {
+	// Update the time blocks when the page loads
+	updateTimeBlocks();
+
+	// Update the time blocks every minute
+	setInterval(updateTimeBlocks, 60000);
+
+	// Load saved data from local storage
+	$("input.description").each(function () {
+		var inputId = $(this).attr("id");
+		var savedValue = localStorage.getItem(inputId);
+		if (savedValue) {
+			$(this).val(savedValue);
+		}
+	});
+
+	// Save input changes to local storage
+	$("button.saveBtn").on("click", function (event) {
+		event.preventDefault();
+		var inputId = $(this).siblings("input.description").attr("id");
+		var inputValue = $(this).siblings("input.description").val();
+		localStorage.setItem(inputId, inputValue);
+
+		// Change the text of the span element
+		$("span.confirm").html(
+			"Appointment Added to <span style='color: red;'>LocalStorage</span> ✔"
+		);
+
+		// Set a timeout to change the text back to its original value after 2 seconds
+		setTimeout(function () {
+			$("span.confirm").text("");
+		}, 2000);
+	});
+});
